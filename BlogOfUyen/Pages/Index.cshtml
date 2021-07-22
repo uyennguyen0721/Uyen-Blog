@@ -1,0 +1,103 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div style="margin-top: 5.5%">
+        <img src="~/images/Home/1.png" width="100%" />
+    </div>
+    <div class="content">
+        <h1 class="text-center" style="margin-top:3%; margin-bottom:3%">Cảm ơn mọi người đã ghé thăm Bog nhỏ của Uyên!</h1>
+        <div class="lead" style="text-align:justify">
+            <p>
+                Trong thời gian ở nhà nghỉ dịch Covid, mình viết Blog này với mục đích ôn lại các kiến thức đã học về front-end wed và học về C# Web. Vì bận nên mình chưa xử lý javascript nhiều nên nhìn vẫn còn khá thô 
+                và chưa được bắt mắt. Trong tương lai có lẽ mình sẽ update lại. Qua Blog này, mình muốn thể hiện quan điểm sống của bản thân cũng như chia sẻ về coder. Mong rằng những chia sẻ này sẽ có ích đối với mọi người,
+                những ai quan tâm đến lập trình.
+            </p>
+            <p>Cuối cùng chúc các bạn xem Blog của mình một ngày tốt lành nhe!!!</p>
+        </div>
+    </div>
+
+    <!-- Code CSS-->
+    <style>
+        a:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        a > h2 > b:hover {
+            color: #0404B4;
+        }
+    </style>
+
+    <div class="content">
+        <div class="jumbotron row" style="background-color: #D0A8DC; z-index: 1">
+            <div class="col-xl-4">
+                <a asp-page="/Privacy"><h2 style="color:black"><b>Chuyện của Code</b></h2></a>
+                <p>
+                    Bạn chưa hay đã và đang là những coder thì bạn hãy một lần ghé đọc những mẫu chuyện này nhé!!! Qua những mẫu chuyện này bạn cũng sẽ hiểu hơn về những coder ...
+                </p>
+                <p><i>Nguồn: Toidicodedao</i></p>
+                <p><a asp-page="/Privacy" style="color:blueviolet; text-align:left"><i>Truy cập >></i></a></p>
+            </div>
+            <div class="col-xl-7">
+                <div class="card rounded-sm shadow">
+                    <img class="card-img-top" src="~/images/Stories/5.jpg" alt="Card image cap" width="100%" />
+                    <div class="card-body">
+                        <h4 class="card-title" style="text-align:center">Chuyện của code - Từ tối ưu code đến optimize cuộc sống</h4>
+                        <p class="card-text">
+                            Với một người có tâm hồn bay bổng và đầu óc sáng tạo như tác giả blog Code dạo (là mình) thì cái thứ quái gì cũng có thể biến thành bài viết được.
+                            Hôm nay khi mình đang ngồi đọc sách dưới tán cây thì bỗng… một quả sầu riêng nặng nửa kg rơi trúng đầu. Nhờ vậy mà mình mới nảy ra cảm hứng viết series này. Tên đầy đủ của series là Từ Chuyện
+                            Code Ngẫm Chuyện Đời, do hơi dài nên mình rút gọn lại thành Chuyện Code Chuyện Đời cho dễ đọc dễ nhớ!
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-lg" style="display: table; margin: 0 auto; ">Xem bài viết đầy đủ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron row" style="background-color: #D0A8DC; z-index: 1">
+            <div>
+                <a asp-page="/Privacy"><h2 style="color:black"><b>Cùng lập trình</b></h2></a>
+                <p>Nơi chia sẻ những kiến thức liên quan đến lập trình ... có thể bạn đã biết @@</p>
+                <p><a asp-page="/Privacy" style="color:blueviolet; text-align:left"><i>Truy cập >></i></a></p>
+                <p><i>Nguồn: Jena-Nguyen</i></p>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card rounded-sm shadow">
+                        <img class="card-img-top" src="~/images/Coder/1.png" alt="Card image cap" width="100%" />
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center">Những kiến thức chung về lập trình</h5>
+                            <a href="#" class="btn btn-outline-primary btn-lg" style="display: table; margin: 0 auto; ">Xem bài viết đầy đủ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card rounded-sm shadow">
+                        <img class="card-img-top" src="~/images/Coder/2.png" alt="Card image cap" width="100%" />
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center">Lập trình C# với ASP.NET Core</h5>
+                            <a href="#" class="btn btn-outline-primary btn-lg" style="display: table; margin: 0 auto; ">Xem bài viết đầy đủ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron row" style="background-color: #D0A8DC; z-index: 1">
+            <div class="col-xl-7">
+                <img src="~/images/Talk/1.jpg" width="100%"/>
+            </div>
+            <div class="col-xl-4">
+                <a asp-page="/Privacy"><h2 style="color:black"><b>Góc tâm sự</b></h2></a>
+                <p>
+                    Cùng nhau chia sẻ những khoảnh khắc vui buồn cũng nhau nhé ... !!!
+                </p>
+                <p><a asp-page="/Privacy" style="color:blueviolet; text-align:right;"><i>Truy cập >></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
