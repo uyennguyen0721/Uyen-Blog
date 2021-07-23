@@ -42,3 +42,4 @@ D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\About.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Stories.cshtml.g.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Story1.cshtml.g.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Story2.cshtml.g.cs
+D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Story3.cshtml.g.cs
