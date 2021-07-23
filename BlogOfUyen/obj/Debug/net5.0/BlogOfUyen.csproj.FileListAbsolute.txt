@@ -38,3 +38,4 @@ D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\ref\BlogOfUyen.dll
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\BlogOfUyen.pdb
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\BlogOfUyen.genruntimeconfig.cache
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\BlogOfUyen.csproj.CopyComplete
+D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\About.cshtml.g.cs
