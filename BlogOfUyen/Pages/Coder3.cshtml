@@ -1,0 +1,178 @@
+﻿@page "/Coder/Tim-hieu-co-ban-ve-Git"
+@model BlogOfUyen.Pages.Coder3Model
+@{
+    ViewData["Title"] = "Tìm hiểu cơ bản về Git";
+}
+
+<style>
+    img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        vertical-align: middle;
+    }
+
+    #content > p {
+        text-align: justify;
+    }
+</style>
+
+<div class="container">
+    <div style="margin-top: 5.5%">
+        <img src="~/images/Coder/git.jpg" width="100%" />
+    </div>
+    <div class="content">
+        <h1 class="text-center" style="margin-top:3%; margin-bottom:3%">Tìm hiểu cơ bản về Git</h1>
+        <p style="text-align:center"><i>Nguồn: ILOOK.ASIA và Viblo</i></p>
+    </div>
+    <div class="content" style="margin-top: 5.5%" id="content">
+        <h2>1. Git là gì?</h2>
+        <p>Git là một trong những Hệ thống Quản lý Phiên bản Phân tán, vốn được phát triển nhằm quản lý mã nguồn (source code) của Linux.</p>
+        <p>Trên Git, ta có thể lưu trạng thái của file dưới dạng lịch sử cập nhật. Vì thế, có thể đưa file đã chỉnh sửa một lần về trạng thái cũ hay có thể biết được file đã được chỉnh sửa chỗ nào.</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa6.png" loading="lazy" width="70%" alt="ảnh minh họa" />
+        </div>
+        <p>Thêm nữa, khi định ghi đè (overwrite) lên file mới nhất đã chỉnh sửa của người khác bằng file đã chỉnh sửa dựa trên file cũ, thì khi upload lên server sẽ hiện ra cảnh cáo. Vì thế, sẽ không xảy ra lỗi khi ghi đè lên nội dung chỉnh sửa của người khác mà không hề hay biết.</p>
+        <p>
+            Git sử dụng mô hình phân tán, ngược lại so với SVN hoặc CSV. Mỗi nơi lưu source sẽ đc gọi là repositories, không cần lưu trữ tập trung một nơi, mà mỗi thành viên trong team sẽ có một repository ở máy của riêng mình.
+            Điều đó có nghĩa là nếu có 3 người A,B,C cùng làm việc trong 1 project. Thì bản thân repo trên máy của người A, người B, và người C có thể kết nối được với nhau.
+        </p>
+        <p>Khi quyết định thay đổi chỗ nào đó lên server ta chỉ cần một thao tác "push" nó lên server. Chúng ta vẫn có thể share thay đổi của chúng ta cho thành viên khác, bằng cách commit hoặc update trực tiếp từ máy của họ mà không phải thông qua repositories gốc trên server (thông qua share ssh cho nhau).</p>
+        <p><b>Lợi ích:</b></p>
+        <ul>
+            <li>An toàn hơn (vì mỗi bản copy của thành viên đều là full copy từ repository gốc, khi server bị down).</li>
+            <li>Các thành viên vẫn có thể làm việc offline, họ vẫn có thể commit và update trên local của họ hoặc thậm chí với nhau mà không cần thông qua server.</li>
+            <li>Khi server hoạt động trở lại, họ có thể cập nhật tất cả lên lại server.</li>
+        </ul>
+        <h2>2. Kho Repo (Repository)</h2>
+        <p>Repository hay được gọi tắt là Repo, đơn giản là nơi chứa tất cả những thông tin cần thiết để duy trì và quản lý các sửa đổi và lịch sử của toàn bộ project. Trong Repo có 2 cấu trúc dữ liệu chính là Object Store và Index. Tất cả dữ liệu của Repo đèu được chứa trong thư mục bạn đang làm việc dưới dạng folder ẩn có tên là .git</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa7.png" loading="lazy" width="80%" alt="ảnh minh họa" />
+        </div>
+        <h2>3. Remote repository và local repository</h2>
+        <p>Đầu tiên, repository của Git được phân thành 2 loại là remote repository và local repository.</p>
+        <ul>
+            <li>Remote repository: Là repository để chia sẻ giữa nhiều người và bố trí trên server chuyên dụng.</li>
+            <li>Local repository: Là repository bố trí trên máy của bản thân mình, dành cho một người dùng sử dụng.</li>
+        </ul>
+        <p>Do repository phân thành 2 loại là local và remote nên với những công việc bình thường thì có thể sử dụng local repository. Khi muốn public nội dung công việc mà mình đã làm trên local repository, thì ta sẽ upload lên remote repository rồi public. Thêm nữa, thông qua remote repository bạn cũng có thể lấy về nội dung thay đổi của người khác.</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa8.png" loading="lazy" width="70%" alt="ảnh minh họa" />
+        </div>
+        <h2>4. Nhánh (Branch)</h2>
+        <p>
+            Đây là một trong những thế mạnh của git là nhánh. Với git, việc quản lý nhánh rất dễ dàng. Mỗi nhánh trong Git gần giống như một workspace. Việc nhảy vào một nhánh để làm việc trong đó tương tự việc chuyển qua ngữ cảnh làm việc mới, và sau đó có thể nhanh chóng quay lại ngữ cảnh cũ. <br />
+            Nhánh (branch) được dùng để phát triển tính năng mới mà không làm ảnh hưởng đến code hiện tại. <br />
+            Nhánh master là nhánh “mặc định” khi bạn tạo một repository. <br />
+            Nhánh master thông thường là nhánh chính của ứng dụng. Ví dụ bạn thử nghiệm một tính năng mới và muốn không ảnh hưởng đến code chính bạn có thể tạo một nhánh mới và sau khi xong sẽ hợp nhất lại với nhánh master. Việc hợp nhất 2 nhánh lại được gọi là merge.
+        </p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa9.png" loading="lazy" width="80%" alt="ảnh minh họa" />
+        </div>
+        <h2>5. Trộn (Merge)</h2>
+        <p>Trộn source từ một nhánh khác vào nhánh hiện tại. Chú ý:</p>
+        <ul>
+            <li>Kiểm tra branch hiện đang làm việc trước khi merge</li>
+            <li>Phải đẩy tất cả những thay đổi dưới máy local lên Git trước khi merge</li>
+            <li>Trước khi merge phải lấy hết những thay đổi mới nhất của các branch khác, hay ít nhất là branch cần merge về máy</li>
+            <li>Merge thành công thì nên đẩy source lên lại lên server</li>
+            <li>Nên merge bằng GUI tool</li>
+        </ul>
+        <h2>6. Xung đột (Conflict)</h2>
+        <p>Conflic là trường hợp có 2 sự thay đổi trong một dòng code và máy tính không thể tự quyết định dòng code nào là “đúng”. Đúng ở đây có nghĩa là “ý đồ của lập trình viên”.</p>
+        <p>Để giải quyết mâu thuẫn bạn phải dùng “tay không” để sữa các xung đột này. Bạn chỉ việc nhìn vào file bị conflict và tự quyết định dòng code nào giữ lại, dòng nào xóa bỏ.</p>
+        <h2>7. Commit </h2>
+        <p>Để ghi lại việc thêm/thay đổi file hay thư mục vào repository thì sẽ thực hiện thao tác gọi là Commit.</p>
+        <p>Khi thực hiện commit, trong repository sẽ tạo ra commit (hoặc revision) đã ghi lại sự khác biệt từ trạng thái đã commit lần trước với trạng thái hiện tại.</p>
+        <p>Commit này đang được chứa tại repository, các commit nối tiếp với nhau theo thứ tự thời gian. Bằng việc lần theo commit này từ trạng thái mới nhất thì có thể biết được lịch sử thay đổi trong quá khứ hoặc nội dung thay đổi đó.</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa10.png" loading="lazy" width="80%" alt="ảnh minh họa" />
+        </div>
+        <h2>8. Git Remote</h2>
+        <p>
+            Để kết nối được với một repo khác người ta sử dụng một khái niệm gọi là remote. <br />
+            Trên thực tế khi làm việc với nhau thì không như vậy, vì không phải máy ai cũng cài một “git server” để người khác kết nối được với mình. Thông thường thì chúng ta sẽ sử dụng một repo chung và các máy kết nối vào repo đó.
+        </p>
+        <p>Có 2 “git repo server” được sử dụng nhiều là github.com và bitbucket.org.</p>
+        <p>Trên thực tế khi có 2 người cùng làm việc với 1 project thì thông thường sẽ tạo một repo trên github hoặc bitbucket và repo trên máy người A sẽ kết nối với repo trên github và máy người B cũng kết nối với repo trên github/bitbucket. Từ đó source code của người A và người B sẽ được đồng bộ với nhau thông qua repo trên github/bitbucket.</p>
+        <p>Vì vậy, trước khi sử dụng git thì bạn nên đăng kí một tài khoản trên github.com hoặc bitbucket.org.</p>
+        <h2>9. Working Tree và Index</h2>
+        <p>Trên Git, những thư mục được đặt trong sự quản lý của Git mà mọi người đang thực hiện công việc trong thực tế được gọi là working tree.</p>
+        <p>Và trên Git, giữa repository và working tree tồn tại một nơi gọi là index. Index là nơi để chuẩn bị cho việc commit lên repository.</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa11.png" loading="lazy" width="80%" alt="ảnh minh họa" />
+        </div>
+        <p>Trên Git, khi đã thực hiện commit thì trạng thái sẽ không được ghi trực tiếp trong repository từ working tree, mà sẽ ghi trạng thái đã được thiết lập của index được xây dựng ở giữa đó. Vì thế, để ghi lại trạng thái của file bằng commit thì trước hết cần thông báo file trong index.</p>
+        <h2>10. Những lệnh cơ bản trên Git cần nhớ</h2>
+        <ul>
+            <li>
+                <b>Thiết thực chứng thực cá nhân:</b> <br />
+                <pre><span>$ git config --global user.name "User Name" <br />$ git config --global user.email "username@gmail.com"</span></pre>
+                <p>Lưu ý: –global được sử dụng để áp dụng cho tất cả các projects. Nếu bạn ko sử dụng –global thì settings sẽ chỉ dùng cho riêng project đó.</p>
+            </li>
+            <li>
+                <b>Tạo một kho chứa Git:</b> <br />
+                <pre><span style="font-size: 16px;">$ git init</span></pre>
+                <p>Nếu như bạn muốn theo dõi một dự án cũ trong Git, bạn cần ở trong thư mục của dự án đó. Lệnh này sẽ tạo một thư mục mới có tên .git, thư mục này chứa tất cả các tập tin cần thiết cho kho chứa.</p>
+            </li>
+            <li>
+                <b>Sao chép một kho chứa đã tồn tại:</b> <br />
+                <pre><span style="font-size: 16px;">$ git clone https://github.com/user/repository.git</span></pre>
+                <p>Câu lệnh trên sẽ tạo một thư mục mới có tên giống trên của Repo.</p>
+            </li>
+            <li>
+                <b>Nhánh trong git:</b> <br />
+                <pre><span style="font-size: 16px;">$ git branch</span></pre>
+                <p>Để tạo mới một branch:</p>
+                <pre><span style="font-size: 16px;">$ git branch <name_branch></span></pre>
+                <p>Để chuyển và tạo mới:</p>
+                <pre><span style="font-size: 16px;">$ git branch -b <name_branch></span></pre>
+            </li>
+            <li>
+                <b>Chuyển nhánh:</b> <br />
+                <p>Trước khi muốn thay đổi source code, điều đầu tiên mà bạn cần phải làm là checkout một nhánh. Để checkout một nhánh, bạn dùng câu lệnh Git sau:</p>
+                <pre><span style="font-size: 16px;">$ git checkout <name_branch></span></pre>
+            </li>
+            <li>
+                <b>Cập nhật thay đổi:</b> <br />
+                <p>Sau khi bạn thay đổi source code: thêm mới, sửa, xoá files,… Bạn cần phải cập nhật lên Staging Area. Để cập nhật hết các files:</p>
+                <pre><span style="font-size: 16px;">$ git add .</span></pre>
+                <p>Sau lệnh add, bạn cần sử dụng câu lệnh Commit để đây thông tin thay đổi lên Local Respository:</p>
+                <pre><span style="font-size: 16px;">$ git commit -m "Message"</span></pre>
+            </li>
+            <li>
+                <b>Cập nhật lên server:</b> <br />
+                <p>Sau câu lệnh Commit, thông tin mới chỉ được cập nhật lên Local Repository. Nếu muốn cập nhật lên server thì bạn phải sử dụng câu lệnh push:</p>
+                <pre><span style="font-size: 16px;">$ git push origin <name_branch></span></pre>
+                <p>Ngoài ra, nếu chưa tồn tại remote trên server thì bạn cần phải add mới một remote trước rồi mới push:</p>
+                <pre><span style="font-size: 16px;">$ git remote add origin <remote_url> <br />$ git push origin <name_branch></span></pre>
+            </li>
+            <li>
+                <b>Gộp nhánh:</b> <br />
+                <p>Sau một thời gian cập nhật các file và push lên git trên branch mới, bây giờ mình cần ghép (merge) code lại vào nhánh gốc (master). Trước tiên, cần phải checkout ra khỏi branch hiện tại cần gộp để vào branch master, sau đó thì dùng lệnh merge để ghép branch mới vào master:</p>
+                <pre><span style="font-size: 16px;">$ git push origin <name_branch></span></pre>
+                <p>Ngoài ra, nếu chưa tồn tại remote trên server thì bạn cần phải add mới một remote trước rồi mới push:</p>
+                <pre><span style="font-size: 16px;">$ git checkout master <br />$ git merge <new_branch></span></pre>
+            </li>
+            <li>
+                <b>Xem lại lịch sử commit:</b> <br />
+                <pre><span style="font-size: 16px;">$ git log</span></pre>
+                <p>Lệnh git log sẽ cho bạn biết về người commit, ngày giờ, message của những lần commit đó.</p>
+            </li>
+            <li>
+                <b>Xem thay đổi trước khi push:</b> <br />
+                <pre><span style="font-size: 16px;">$ git diff</span></pre>
+                <p>Lệnh này giúp bạn biết những gì đã được thay đổi giữa nhánh hiện tại và nhánh trước nó.</p>
+            </li>
+            <li>
+                <b>Gộp commit:</b> <br />
+                <pre><span style="font-size: 16px;">$ git rebase -i HEAD~</span></pre>
+                <p>Sau dấu ~ là số commit bạn muốn gộp. Sau khi gõ lệnh này một cửa sổ trình soạn thảo hiện ra. Thay đổi ký tự pick của dòng các dòng sau dòng đầu thành s rồi lưu lại/kết thúc. Khi đó, trình soạn thảo để chỉnh sửa giải thích commit thiết lập cho commit sau khi đã tổng hợp sẽ được hiển thị, nên hãy chỉnh sửa lưu lại/kết thúc.</p>
+            </li>
+            <li>
+                <b>Pull từ remote repository:</b> <br />
+                <pre><span style="font-size: 16px;">$ git pull origin master</span></pre>
+                <p>Lệnh trên sẽ gộp những thay đổi mới kéo về từ máy chủ từ xa với nhánh hiện tại trên máy local.</p>
+            </li>
+        </ul>
+    </div>
+</div>

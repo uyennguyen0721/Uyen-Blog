@@ -1,7 +1,7 @@
-﻿@page "/Coder/Lap-trinh-C#-voi-ASP.NET"
+﻿@page "/Coder/Lap-trinh-voi-ASP.NET"
 @model BlogOfUyen.Pages.Coder2Model
 @{
-    ViewData["Title"] = "Lập trình C# với ASP.NET";
+    ViewData["Title"] = "Lập trình với ASP.NET";
 }
 
 <style>
@@ -11,21 +11,52 @@
         vertical-align: middle;
     }
 
-    #content {
+    #content > p {
         text-align: justify;
     }
 </style>
 
 <div class="container">
     <div style="margin-top: 5.5%">
-        <img src="~/images/Coder/1.png" width="100%" />
+        <img src="~/images/Coder/2.png" width="100%" />
     </div>
     <div class="content">
-        <h1 class="text-center" style="margin-top:3%; margin-bottom:3%">Lập trình C# với ASP.NET</h1>
+        <h1 class="text-center" style="margin-top:3%; margin-bottom:3%">Lập trình với ASP.NET</h1>
         <p style="text-align:center"><i>Nguồn: Tự học ICT</i></p>
     </div>
     <div class="content" style="margin-top: 5.5%" id="content">
         <h2>Giới thiệu chung về ASP.NET Core</h2>
-
+        <p>ASP.NET Core là framework của Microsoft hỗ trợ phát triển các ứng dụng web. Phiên bản đầu tiên ASP.NET Core phát hành tháng 6 năm 2016.</p>
+        <h4>Truyền thống và hiện đại</h4>
+        <p>ASP.NET Core được thiết kế lại hoàn toàn để phù hợp cho phát triển các ứng dụng web hiện đại. Trong ASP.NET Core, cả framework và platform cho thực thi ứng dụng đều được xây dựng lại. Nó đồng thời bổ sung thêm những tính năng mới không có trong ASP.NET truyền thống.</p>
+        <p>Tuy được xây dựng lại từ đầu nhưng ASP.NET Core vẫn kế thừa những ưu điểm của ASP.NET (vốn đã và đang được sử dụng rất rộng rãi). Vì vậy, ASP.NET Core cũng được xem như người kế tục của ASP.NET. Những lập trình viên đã quen thuộc với ASP.NET rất dễ dàng chuyển sang ASP.NET Core.</p>
+        <h4>Cộng đồng và doanh nghiệp</h4>
+        <p>ASP.NET Core thu hút sự quan tâm rất lớn của cộng đồng do đây là một framework mã mở. Đây là điểm khác biệt rất lớn với ASP.NET truyền thống. Sự đóng góp của cộng đồng khiến ASP.NET Core phát triển rất nhanh chóng.</p>
+        <p>Đây là công nghệ mới nhất được Microsoft khuyến khích sử dụng để phát triển các ứng dụng web hiện đại, đặc biệt nếu đó là dự án mới. Các ứng dụng web sẵn có cũng có thể chuyển đổi sang ASP.NET Core để tận dụng những ưu thế của framework/platform mới này.</p>
+        <p>Hiện nay nhiều công ty đã và đang chuyển dịch sang ASP.NET Core, nhất là khi phát triển các dự án mới. Do vậy, nhu cầu học và làm việc với công nghệ mới này đang tăng lên rất nhanh.</p>
+        <h2>Lịch sử của ASP.NET</h2>
+        <p>ASP.NET ra đời từ 2002 với vai trò là một bộ phận của .NET Framework 1.0 nhằm thay thế cho ASP (Active Server Pages, ra đời từ 1996) cổ điển (sử dụng VBScript) và cạnh tranh với PHP.</p>
+        <p>Bên trên ASP.NET, Microsoft xây dựng một số mô hình lập trình khác nhau để hỗ trợ lập trình viên: (1) Web Forms, (2) MVC.</p>
+        <p>Web Forms ra đời năm 2002 hướng tới mô hình web “stateful” dựa trên sự kiện tương tự như Windows Forms. Mô hình lập trình của Web Forms có quá nhiều vấn đề, nhất là đối với các ứng dụng lớn, bao gồm hạn chế khi test, mô hình stateful quá phức tạp, không kiểm soát được HTML gây khó khăn cho xây dựng client. Web Forms dần bị thay thế khi MVC ra đời.</p>
+        <p>ASP.NET MVC ra đời năm 2009 dựa trên mô hình kiến trúc MVC (Model – View – Controller), tương tự như Ruby on Rails, Django hay Java Spring. Mô hình này đặc biệt thành công và được sử dụng rất rộng rãi thay thế cho Web Forms.</p>
+        <p>Năm 2012, ASP.NET Web API ra đời giúp phát triển ứng dụng dạng dịch vụ REST và dần thay thế WCF (Windows Communication Foundation, xuất hiện từ 2006).</p>
+        <h2>ASP.NET và ASP.NET Core</h2>
+        <p>Trong ASP.NET truyền thống bạn có thể xây dựng các ứng dụng web sử dụng một trong số các mô hình lập trình mà framework này cung cấp như Web Forms, MVC, Web API, Web Pages. Các mô hình này có thể xem như những framework riêng biệt xây dựng bên trên framework lớn ASP.NET.</p>
+        <p>Trong ASP.NET Core không có sự phân chia như vậy nữa. Nói theo cách khác, các mô hình lập trình trong ASP.NET Core được thống nhất. Bạn có thể lựa chọn phát triển ứng dụng web theo mô hình MVC, Web API, Razor Pages. Tuy nhiên, các mô hình này không tách rời (sử dụng các class/thư viện riêng biệt) như trong ASP.NET mà nằm trong một hệ thống thống nhất, sử dụng chung class và thư viện.</p>
+        <p>Tất cả những ưu điểm quen thuộc của MVC, Web API hay Web Pages của ASP.NET được kế thừa trong các mô hình tương đương của ASP.NET Core.</p>
+        <p>Bản thân các kỹ thuật lập trình của chúng hoàn toàn tương tự. Do đó, nếu bạn đã quen thuộc với ASP.NET, bạn rất dễ dàng tiếp cận với ASP.NET Core. Những khái niệm có sẵn trong ASP.NET như Router, Model-binding, Razor, v.v., có mặt đầy đủ trong ASP.NET Core.</p>
+        <h2>Bạn có thể viết những loại ứng dụng gì trong ASP.NET Core</h2>
+        <p>ASP.NET Core cho phép bạn viết gần như bất kỳ loại ứng nào có liên quan đến HTTP, như ứng dụng web HTML truyền thống, REST API cho ứng dụng đơn trang (Single Page Application, SPA), dịch vụ gọi hàm từ xa (Remote Procedure Call, RPC).</p>
+        <div style="text-align:center; margin-top: 5%; margin-bottom: 5%">
+            <img src="~/images/Coder/anhminhhoa5.png" loading="lazy" width="60%" alt="ảnh minh họa" />
+        </div>
+        <p>Ứng dụng web với mã HTML do server sinh ra là loại ứng dụng cơ bản và truyền thống mà ASP.NET Core hỗ trợ. Để phát triển các loại ứng dụng này bạn có thể sử dụng mô hình lập trình <strong>MVC </strong>hoặc <strong>Razor Pages</strong>.</p>
+        <p><strong>ASP.NET Core MVC</strong> là mô hình lập trình ứng dụng web tương tự như ASP.NET MVC quen thuộc. Các thành phần của ứng dụng được phân chia ra các thành phần tuân theo mẫu kiến trúc MVC (Model – View – Controller), tương tự như Ruby on Rails, Java Spring hoặc Django.</p>
+        <p><strong>Razor Pages</strong> là mô hình đơn giản hóa của MVC, chỉ bao gồm thành phần V (View) viết bằng ngôn ngữ Razor – loại cấu trúc kết hợp HTML và C#. Bạn có thể hình dung Razor là một dạng ngôn ngữ tương tự PHP nhưng có cấu trúc của C#. Razor Pages tương tự như Web Pages của ASP.NET.</p>
+        <p>Ứng dụng web đơn trang (<strong>SPA</strong>) hiện rất phổ biến. Loại ứng dụng này sử dụng các thư viện/framework JavaScript cho thành phần client. Các framework phổ biến hàng đầu hiện nay bao gồm Angular, React. Các loại ứng dụng này thường yêu cầu dữ liệu ở dạng JSON hoặc XML từ các REST (REpresentational State Transfer) API trên server.</p>
+        <p>Trên ASP.NET Core bạn có thể dễ dàng xây dựng các <strong>REST API</strong> như vậy. Bạn cũng có thể hình dung REST API này bao gồm thành phần M (Model) và C (Controller) của MVC nhưng không có thành phần V (View). Thành phần View do bản thân ứng dụng SPA chạy trên trình duyệt đảm nhiệm.</p>
+        <p>Trên ASP.NET Core bạn cũng có thể sử dụng công nghệ phát triển ứng dụng SPA riêng mới nhất của Microsoft: <strong>Blazor</strong>. Hiện Blazor có hai mô hình, Blazor server và Blazor WebAssembly.</p>
+        <p>Gọi hàm từ xa (<strong>RPC</strong>) cũng là một mô hình sử dụng trong phát triển ứng dụng hướng dịch vụ (Service-Oriented Application). Trước đây WCF (Windows Communications Foundation) là công cụ chủ yếu phục vụ cho mục đích này. Tuy nhiên WCF đã dừng phát triển. Bạn có thể sử dụng ASP.NET Core thay thế cho mục đích này.</p>
+        <p>Nếu không muốn tự mình xây dựng mọi thứ từ đầu, bạn cũng có thể sử dụng một hệ quản trị nội dung (Content Management System, <strong>CMS</strong>) xây dựng trên ASP.NET Core như Orchard Core hoặc Piranha. Các CMS giúp bạn nhanh chóng xây dựng ra các website với các tính năng cơ bản. Bạn chỉ cần phát triển những gì mình cần mà không phải xây dựng mọi thứ từ đầu.</p>
     </div>
 </div>
