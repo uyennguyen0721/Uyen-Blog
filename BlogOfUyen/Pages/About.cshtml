@@ -20,9 +20,7 @@
     </div>
 
     <style>
-        .profile {
-            margin:  0;
-        }
+        
 
         .profile-sidebar {
             margin: 5% auto;
@@ -65,25 +63,30 @@
             margin-top: 3%;
         }
 
-            .profile-userinfo .row svg {
-                margin-right: 3%;
-                margin-left: 5%;
-            }
+        .profile-userinfo .row svg {
+            margin-right: 3%;
+            margin-left: 5%;
+        }
+
+        #info .row > a:hover {
+            text-decoration: none;
+            color: #6A0888;
+        }
     </style>
 
-    <div class="container">
-        <div class="row profile" style="margin-top: 5.5%">
-            <div class="col-md-4 ">
-                <div class="profile-sidebar container rounded-sm shadow" style="background: #E3CEF6; padding: 20px; margin-bottom: 20px; margin-top: -1px">
+    <div class="content">
+        <div class="row" style="margin-top: 5.5%">
+            <div class="col-md-4">
+                <div class="card profile-sidebar rounded-sm shadow" style="background: #E3CEF6; padding: 20px; margin-bottom: 20px; margin-top: -0.5px">
                     <div class="profile-userpic">
                         <img src="~/images/About/avatar.jpg" class="img-responsive" alt="Ảnh đại diện" style="margin-left: 26.5%" />
                     </div>
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">Nguyễn Thị Thu Uyên</div>
-                        <div class="profile-usertitle-job">Sinh viên IT</div>
+                    <div class="profile-usertitle card-body">
+                        <div class="profile-usertitle-name card-title">Nguyễn Thị Thu Uyên</div>
+                        <div class="profile-usertitle-job card-title">Sinh viên IT</div>
                     </div>
 
-                    <div class="profile-userinfo">
+                    <div class="profile-userinfo card-text" id="info">
                         <div class="row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />

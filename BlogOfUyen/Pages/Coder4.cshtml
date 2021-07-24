@@ -1,0 +1,187 @@
+﻿@page "/Coder/Nhung-kien-thuc-co-ban-ve-ReactJs"
+@model BlogOfUyen.Pages.Coder4Model
+@{
+    ViewData["Title"] = "Những kiến thức cơ bản về ReactJs";
+}
+
+<style>
+    img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        vertical-align: middle;
+    }
+
+    #content > p {
+        text-align: justify;
+    }
+
+    #content > p > a:hover {
+        text-decoration: none;
+        color: #6A0888;
+    }
+
+    pre {
+        background-color: #BCA9F5; 
+        padding: 3%;
+    }
+</style>
+
+<div class="container">
+    <div style="margin-top: 5.5%">
+        <img src="~/images/Coder/ReactJs.png" width="100%" />
+    </div>
+    <div class="content">
+        <h1 class="text-center" style="margin-top:3%; margin-bottom:3%">Những kiến thức cơ bản về ReactJs</h1>
+        <p style="text-align:center"><i>Nguồn: Viblo</i></p>
+    </div>
+    <div class="content" style="margin-top: 5.5%" id="content">
+        <p>Reactjs là một thư viện javascript mã nguồn mở giúp cho việc xây dựng giao diện người dùng có thể tái sử dụng. Hiện nay, thư viện này nhận được rất nhiều sự quan tâm đến từ cộng đồng. Nó đang được bảo trì (maintain) bởi Facebook và Instagram, cũng với sự đóng góp của cộng đồng các lập trình viên giỏi trên Thế giới.</p>
+        <h2>1. JSX</h2>
+        <p>JSX là viết tắt của từ Javascript syntax extention (phần bổ sung cú pháp của javascript). Là một sự hòa trộn của Javascript và XML. Là một dạng ngôn ngữ cho phép viết các mã HTML trong Javascript. Giúp ta viết mã HTML đơn giản hơn trong javascript.</p>
+        <p style="text-align:center">JSX = JS + XML</p>
+        <p>Ưu điểm của nó bao gồm:</p>
+        <ul>
+            <li>Nhanh hơn: JSX thực hiện tối ưu hóa trong khi biên dịch sang mã Javacsript. Các mã này cho thời gian thực hiện nhanh hơn nhiều so với một mã tương đương viết trực tiếp bằng Javascript.</li>
+            <li>An toàn hơn: JSX là kiểu statically-typed , nghĩa là nó được biên dịch trước khi chạy. Vì vậy khi có lỗi nó sẽ báo ngay trong lúc biên dịch.</li>
+            <li>Dễ dàng sử dụng.</li>
+        </ul>
+        <p>Ví dụ:</p>
+        <p>HTML thông thường:</p>
+        <pre class="language-html" data-filename=""><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-img-top<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Card image cap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some quick example text to build on the card title and make up the bulk of the card's content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Go somewhere<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+</code></pre>
+        <p>Chuyển sang JSX:</p>
+        <pre class="language-html" data-filename=""><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-img-top<span class="token punctuation">"</span></span> <span class="token attr-name">src</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Card image cap<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hello World!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>card-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Some quick example text to build on the card title and make up the bulk of the card's content.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Go somewhere<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+        <p>
+            Về cơ bản thì nó cũng không có gì thay đổi nhiều.
+            <img src="~/images/Coder/icon.png" loading="lazy" width="2%" alt="ảnh minh họa" />
+        </p>
+        <p>
+            <b>Tips:</b> Bạn có thể vào đây để chuyển đổi HTML sang JSX
+            <a href="https://magic.reactjs.net/htmltojsx.htm">đây</a>
+        </p>
+        <h2>2. Component</h2>
+        <p>Một trong những khái niệm quan trọng trước khi học reactjs đó là component.</p>
+        <p>Component một khối đóng gói, bên trong gồm các thẻ html, props, state ... hiểu đơn giản là một thẻ html mình tự định nghĩa ra đế đóng gói một component lại. Mỗi component này sẽ có mỗi chức năng, mục đích riêng biệt để ta có thể quản lý cũng như xử lý dữ liệu dễ dàng hơn.</p>
+        <p>Đây là 1 nền tảng của reactjs, Với một trang web thông thường có chung một trang lớn, một trang lớn có nhiều component, điều này làm ta sẽ dễ bị nhầm lẫn giữa các component, ko thể hiện rõ được chức năng của từng component. Vì vậy bạn nên chuyển đổi html thông thường sang dạng component. Một trang web được chia nhỏ ra làm nhiều component để ta dễ quản lý và xử lý dữ liệu cho mỗi component. Nếu ta ko chia nhỏ ra các component thì việc xử lý dữ liệu sẽ khá phức tạp và rắc rối. Vì component đc viết bằng js nên bạn có thể dễ dang truyền dữ liệu cũng như xử lý dữ liệu ở đây.</p>
+        <p><i>Ví dụ:</i> Ta có 1 component với chức năng làm menu cho trang web của chúng ta.</p>
+        <pre class="language-js" data-filename=""><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Nav</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>nav className<span class="token operator">=</span><span class="token string">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"collapse navbar-collapse"</span> id<span class="token operator">=</span><span class="token string">"navbarNav"</span><span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>ul className<span class="token operator">=</span><span class="token string">"navbar-nav"</span><span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>li className<span class="token operator">=</span><span class="token string">"nav-item active"</span><span class="token operator">&gt;</span>
+                                <span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">"nav-link"</span> href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">&gt;</span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>li className<span class="token operator">=</span><span class="token string">"nav-item"</span><span class="token operator">&gt;</span>
+                                <span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">"nav-link"</span> href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">&gt;</span>Features<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>li className<span class="token operator">=</span><span class="token string">"nav-item"</span><span class="token operator">&gt;</span>
+                                <span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">"nav-link"</span> href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">&gt;</span>Pricing<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Nav<span class="token punctuation">;</span>
+</code></pre>
+        <p>
+            Ở đây mình tạo một component tên là <code>Nav</code> có chức năng là để làm menu cho page của mình.
+            <br> <br><strong>Chú ý:</strong> <br>
+            Theo quy định của Reactjs thì không có chứa 2 thẻ html ngang hàng với nhau. Nếu có 2 thẻ ngang hàng nhau thì cần có thẻ cha bọc bên ngoài. <br>
+            <br> <em>Ví dụ:</em><br>
+        </p>
+        <pre class="language-js" data-filename=""><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">NewComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"alert alert-primary"</span> role<span class="token operator">=</span><span class="token string">"alert"</span><span class="token operator">&gt;</span>
+                    This is a primary alert—check it out<span class="token operator">!</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"alert alert-secondary"</span> role<span class="token operator">=</span><span class="token string">"alert"</span><span class="token operator">&gt;</span>
+                    This is a secondary alert—check it out<span class="token operator">!</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NewComponent<span class="token punctuation">;</span>
+</code><p>  Ở đây mình tạo một component tên là <code>Nav</code> có chức năng là để làm menu cho page của mình.
+<br> <br><strong>Chú ý:</strong> <br>
+  Theo quy định của Reactjs thì không có chứa 2 thẻ html ngang hàng với nhau. Nếu có 2 thẻ ngang hàng nhau thì cần có thẻ cha bọc bên ngoài. <br>
+<br> <em>Ví dụ:</em>
+<br></p></pre>
+        <p>Cách viết trên là 1 ví dụ sai về lỗi mà mình nêu trên. Để có 1 component chuẩn thì trong trường hợp này mình sẽ gộp 2 thẻ div ngang hàng vài 1 div lớn.</p>
+        <pre class="language-js" data-filename=""><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">NewComponent</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"alert alert-primary"</span> role<span class="token operator">=</span><span class="token string">"alert"</span><span class="token operator">&gt;</span>
+                        This is a primary alert—check it out<span class="token operator">!</span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"alert alert-secondary"</span> role<span class="token operator">=</span><span class="token string">"alert"</span><span class="token operator">&gt;</span>
+                        This is a secondary alert—check it out<span class="token operator">!</span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> NewComponent<span class="token punctuation">;</span>
+</code></pre>
+        <p>
+            <b>Tips:</b> Nếu bạn dùng
+            <a href="https://magic.reactjs.net/htmltojsx.htm">Link convert</a> này thì nó sẽ tự động thêm 1 div lớn cho mình.
+            <img src="~/images/Coder/icon.png" loading="lazy" width="2%" alt="ảnh minh họa" />
+        </p>
+        <p>Có 4 cách để chúng ta có thể tạo nên 1 component:</p>
+        <ul>
+            <li>Kiểu hàm function bình thường</li>
+            <li>Function không tên. Anonymous function</li>
+            <li>Arrow function</li>
+            <li>Class</li>
+        </ul>
+        <p>Tùy vào mục đích ta sẽ sử dụng các cách cho hợp lý.</p>
+        <p>Thông thường những component có chức năng riêng sẽ có một class riêng và ta sẽ sử dụng cách 4 để tạo nên một component.</p>
+        <h2>3. Props</h2>
+        <p>Props là viết tắt của từ Properties, là một thuộc tính của component. Chúng ta có thể thay đổi props của một component bằng cách truyền một tham số vào.</p>
+        <p><i>Ví dụ:</i></p>
+        <pre class="language-html" data-filename=""><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Company</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>framgia<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+        <p>
+            Ở đây mình tự đinh nghĩa 1 component có tên là <code>Company</code> và truyền props <code>name</code> vào.
+            <br>Cụ thể hơn, ta sẽ làm như sau: (ở đây mình khai báo theo kiểu function)
+        </p>
+        <pre class="language-js" data-filename=""><code class="language-js"><span class="token keyword">function</span> <span class="token function">Company</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// gọi như sau:</span>
+<span class="token operator">&lt;</span>Company name<span class="token operator">=</span><span class="token string">"framgia"</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre>
+        <p>
+            <code>props</code> ở đây là từ khóa và không thay đổi nhé.
+            <br> <br>
+            Qua đây mình đã nói về những kiến thức cơ bản nhất về reactjs để chúng ta có thể bắt đầu với nó.
+        </p>
+    </div>
+</div>

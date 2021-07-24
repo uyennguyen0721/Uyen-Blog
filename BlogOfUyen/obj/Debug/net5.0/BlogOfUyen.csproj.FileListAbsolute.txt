@@ -49,3 +49,4 @@ D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Coder.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Coder1.cshtml.g.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Coder2.cshtml.g.cs
 D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Coder3.cshtml.g.cs
+D:\.NET Core Projects\Uyen-Blog\BlogOfUyen\obj\Debug\net5.0\Razor\Pages\Coder4.cshtml.g.cs
